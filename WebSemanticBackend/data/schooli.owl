@@ -1,0 +1,1044 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY smartschool "http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool"
+     xml:base="http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:smartschool="http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool">
+        <owl:versionIRI rdf:resource="http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#attend_course -->
+
+    <owl:ObjectProperty rdf:about="&smartschool;attend_course">
+        <rdfs:range rdf:resource="&smartschool;Course"/>
+        <rdfs:domain rdf:resource="&smartschool;Student"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#belongs_to_departement -->
+
+    <owl:ObjectProperty rdf:about="&smartschool;belongs_to_departement">
+        <rdfs:domain rdf:resource="&smartschool;Bloc"/>
+        <rdfs:range rdf:resource="&smartschool;Department"/>
+        <owl:inverseOf rdf:resource="&smartschool;has_bloc"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#business_department -->
+
+    <owl:ObjectProperty rdf:about="&smartschool;business_department">
+        <rdfs:range rdf:resource="&smartschool;BS"/>
+        <rdfs:domain rdf:resource="&smartschool;Business"/>
+        <rdfs:subPropertyOf rdf:resource="&smartschool;has_department"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#engineering_department -->
+
+    <owl:ObjectProperty rdf:about="&smartschool;engineering_department">
+        <rdfs:domain rdf:resource="&smartschool;Engineering"/>
+        <rdfs:range rdf:resource="&smartschool;GC"/>
+        <rdfs:range rdf:resource="&smartschool;IT"/>
+        <rdfs:range rdf:resource="&smartschool;ME"/>
+        <rdfs:subPropertyOf rdf:resource="&smartschool;has_department"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#has_BS_Student -->
+
+    <owl:ObjectProperty rdf:about="&smartschool;has_BS_Student">
+        <rdfs:range rdf:resource="&smartschool;BS_Student"/>
+        <rdfs:domain rdf:resource="&smartschool;Business"/>
+        <rdfs:subPropertyOf rdf:resource="&smartschool;has_student"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#has_BS_Teacher -->
+
+    <owl:ObjectProperty rdf:about="&smartschool;has_BS_Teacher">
+        <rdfs:range rdf:resource="&smartschool;BS_Teacher"/>
+        <rdfs:domain rdf:resource="&smartschool;Business"/>
+        <rdfs:subPropertyOf rdf:resource="&smartschool;has_teacher"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#has_Engineering_Student -->
+
+    <owl:ObjectProperty rdf:about="&smartschool;has_Engineering_Student">
+        <rdfs:domain rdf:resource="&smartschool;Engineering"/>
+        <rdfs:range rdf:resource="&smartschool;Engineering_Student"/>
+        <rdfs:subPropertyOf rdf:resource="&smartschool;has_student"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#has_Engineering_Teacher -->
+
+    <owl:ObjectProperty rdf:about="&smartschool;has_Engineering_Teacher">
+        <rdfs:domain rdf:resource="&smartschool;Engineering"/>
+        <rdfs:range rdf:resource="&smartschool;GC_Teacher"/>
+        <rdfs:range rdf:resource="&smartschool;IT_Teacher"/>
+        <rdfs:range rdf:resource="&smartschool;ME_Teacher"/>
+        <rdfs:subPropertyOf rdf:resource="&smartschool;has_teacher"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#has_GC_course -->
+
+    <owl:ObjectProperty rdf:about="&smartschool;has_GC_course">
+        <rdfs:range rdf:resource="&smartschool;Course_GC"/>
+        <rdfs:domain rdf:resource="&smartschool;GC_Teacher"/>
+        <rdfs:subPropertyOf rdf:resource="&smartschool;has_course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#has_IT_course -->
+
+    <owl:ObjectProperty rdf:about="&smartschool;has_IT_course">
+        <rdfs:range rdf:resource="&smartschool;Course_IT"/>
+        <rdfs:domain rdf:resource="&smartschool;IT_Teacher"/>
+        <rdfs:subPropertyOf rdf:resource="&smartschool;has_course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#has_ME_course -->
+
+    <owl:ObjectProperty rdf:about="&smartschool;has_ME_course">
+        <rdfs:range rdf:resource="&smartschool;Course_ME"/>
+        <rdfs:domain rdf:resource="&smartschool;ME_Teacher"/>
+        <rdfs:subPropertyOf rdf:resource="&smartschool;has_course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#has_bloc -->
+
+    <owl:ObjectProperty rdf:about="&smartschool;has_bloc">
+        <rdfs:range rdf:resource="&smartschool;Bloc"/>
+        <rdfs:domain rdf:resource="&smartschool;Department"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#has_bs_course -->
+
+    <owl:ObjectProperty rdf:about="&smartschool;has_bs_course">
+        <rdfs:domain rdf:resource="&smartschool;BS_Teacher"/>
+        <rdfs:range rdf:resource="&smartschool;Course_BS"/>
+        <rdfs:subPropertyOf rdf:resource="&smartschool;has_course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#has_course -->
+
+    <owl:ObjectProperty rdf:about="&smartschool;has_course">
+        <rdfs:range rdf:resource="&smartschool;Course"/>
+        <rdfs:domain rdf:resource="&smartschool;Teacher"/>
+        <owl:inverseOf rdf:resource="&smartschool;teached_by"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#has_department -->
+
+    <owl:ObjectProperty rdf:about="&smartschool;has_department">
+        <rdfs:range rdf:resource="&smartschool;Department"/>
+        <rdfs:domain rdf:resource="&smartschool;School"/>
+        <owl:inverseOf rdf:resource="&smartschool;has_school"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#has_school -->
+
+    <owl:ObjectProperty rdf:about="&smartschool;has_school">
+        <rdfs:domain rdf:resource="&smartschool;Department"/>
+        <rdfs:range rdf:resource="&smartschool;School"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#has_student -->
+
+    <owl:ObjectProperty rdf:about="&smartschool;has_student">
+        <rdfs:range rdf:resource="&smartschool;Person"/>
+        <rdfs:domain rdf:resource="&smartschool;School"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#has_teacher -->
+
+    <owl:ObjectProperty rdf:about="&smartschool;has_teacher">
+        <rdfs:range rdf:resource="&smartschool;Person"/>
+        <rdfs:domain rdf:resource="&smartschool;School"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#is_student_of -->
+
+    <owl:ObjectProperty rdf:about="&smartschool;is_student_of">
+        <rdfs:domain rdf:resource="&smartschool;Student"/>
+        <rdfs:range rdf:resource="&smartschool;Teacher"/>
+        <owl:inverseOf rdf:resource="&smartschool;is_teacher_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#is_teacher_of -->
+
+    <owl:ObjectProperty rdf:about="&smartschool;is_teacher_of">
+        <rdfs:range rdf:resource="&smartschool;Student"/>
+        <rdfs:domain rdf:resource="&smartschool;Teacher"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#student_of_BS -->
+
+    <owl:ObjectProperty rdf:about="&smartschool;student_of_BS">
+        <rdfs:domain rdf:resource="&smartschool;BS_Student"/>
+        <rdfs:range rdf:resource="&smartschool;BS_Teacher"/>
+        <rdfs:subPropertyOf rdf:resource="&smartschool;is_student_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#student_of_Engineering -->
+
+    <owl:ObjectProperty rdf:about="&smartschool;student_of_Engineering">
+        <rdfs:domain rdf:resource="&smartschool;Engineering_Student"/>
+        <rdfs:range rdf:resource="&smartschool;GC_Teacher"/>
+        <rdfs:range rdf:resource="&smartschool;IT_Teacher"/>
+        <rdfs:range rdf:resource="&smartschool;ME_Teacher"/>
+        <rdfs:subPropertyOf rdf:resource="&smartschool;is_student_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#teached_by -->
+
+    <owl:ObjectProperty rdf:about="&smartschool;teached_by">
+        <rdfs:domain rdf:resource="&smartschool;Course"/>
+        <rdfs:range rdf:resource="&smartschool;Teacher"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#Adress -->
+
+    <owl:DatatypeProperty rdf:about="&smartschool;Adress">
+        <rdfs:domain rdf:resource="&smartschool;School"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#Age -->
+
+    <owl:DatatypeProperty rdf:about="&smartschool;Age">
+        <rdfs:domain rdf:resource="&smartschool;Person"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#Degree -->
+
+    <owl:DatatypeProperty rdf:about="&smartschool;Degree">
+        <rdfs:domain rdf:resource="&smartschool;Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#Email -->
+
+    <owl:DatatypeProperty rdf:about="&smartschool;Email">
+        <rdfs:domain rdf:resource="&smartschool;Person"/>
+        <rdfs:domain rdf:resource="&smartschool;School"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#First_Name -->
+
+    <owl:DatatypeProperty rdf:about="&smartschool;First_Name">
+        <rdfs:domain rdf:resource="&smartschool;Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#ID -->
+
+    <owl:DatatypeProperty rdf:about="&smartschool;ID">
+        <rdfs:domain rdf:resource="&smartschool;Bloc"/>
+        <rdfs:domain rdf:resource="&smartschool;Course"/>
+        <rdfs:domain rdf:resource="&smartschool;Department"/>
+        <rdfs:domain rdf:resource="&smartschool;Person"/>
+        <rdfs:domain rdf:resource="&smartschool;School"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#Last_Name -->
+
+    <owl:DatatypeProperty rdf:about="&smartschool;Last_Name">
+        <rdfs:domain rdf:resource="&smartschool;Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#Nomber_of_chapter -->
+
+    <owl:DatatypeProperty rdf:about="&smartschool;Nomber_of_chapter">
+        <rdfs:domain rdf:resource="&smartschool;Course"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#Title -->
+
+    <owl:DatatypeProperty rdf:about="&smartschool;Title">
+        <rdfs:domain rdf:resource="&smartschool;Course"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#end_date -->
+
+    <owl:DatatypeProperty rdf:about="&smartschool;end_date">
+        <rdfs:domain rdf:resource="&smartschool;Course"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#name -->
+
+    <owl:DatatypeProperty rdf:about="&smartschool;name">
+        <rdfs:domain rdf:resource="&smartschool;Bloc"/>
+        <rdfs:domain rdf:resource="&smartschool;Department"/>
+        <rdfs:domain rdf:resource="&smartschool;School"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#nbr_of_floor -->
+
+    <owl:DatatypeProperty rdf:about="&smartschool;nbr_of_floor">
+        <rdfs:domain rdf:resource="&smartschool;Bloc"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#start_date -->
+
+    <owl:DatatypeProperty rdf:about="&smartschool;start_date">
+        <rdfs:domain rdf:resource="&smartschool;Course"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#status -->
+
+    <owl:DatatypeProperty rdf:about="&smartschool;status">
+        <rdfs:domain rdf:resource="&smartschool;Department"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#BS -->
+
+    <owl:Class rdf:about="&smartschool;BS">
+        <rdfs:subClassOf rdf:resource="&smartschool;Department"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#BS_Student -->
+
+    <owl:Class rdf:about="&smartschool;BS_Student">
+        <rdfs:subClassOf rdf:resource="&smartschool;Student"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#BS_Teacher -->
+
+    <owl:Class rdf:about="&smartschool;BS_Teacher">
+        <rdfs:subClassOf rdf:resource="&smartschool;Teacher"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#Bloc -->
+
+    <owl:Class rdf:about="&smartschool;Bloc"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#Bloc_A -->
+
+    <owl:Class rdf:about="&smartschool;Bloc_A">
+        <rdfs:subClassOf rdf:resource="&smartschool;Bloc"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#Bloc_B -->
+
+    <owl:Class rdf:about="&smartschool;Bloc_B">
+        <rdfs:subClassOf rdf:resource="&smartschool;Bloc"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#Block_C -->
+
+    <owl:Class rdf:about="&smartschool;Block_C">
+        <rdfs:subClassOf rdf:resource="&smartschool;Bloc"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#Block_D -->
+
+    <owl:Class rdf:about="&smartschool;Block_D">
+        <rdfs:subClassOf rdf:resource="&smartschool;Bloc"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#Business -->
+
+    <owl:Class rdf:about="&smartschool;Business">
+        <rdfs:subClassOf rdf:resource="&smartschool;School"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#Course -->
+
+    <owl:Class rdf:about="&smartschool;Course"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#Course_AutoCad -->
+
+    <owl:Class rdf:about="&smartschool;Course_AutoCad">
+        <rdfs:subClassOf rdf:resource="&smartschool;Course_ME"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#Course_BS -->
+
+    <owl:Class rdf:about="&smartschool;Course_BS">
+        <rdfs:subClassOf rdf:resource="&smartschool;Course"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#Course_Biton -->
+
+    <owl:Class rdf:about="&smartschool;Course_Biton">
+        <rdfs:subClassOf rdf:resource="&smartschool;Course_GC"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#Course_Data_Base -->
+
+    <owl:Class rdf:about="&smartschool;Course_Data_Base">
+        <rdfs:subClassOf rdf:resource="&smartschool;Course_IT"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#Course_Data_Science -->
+
+    <owl:Class rdf:about="&smartschool;Course_Data_Science">
+        <rdfs:subClassOf rdf:resource="&smartschool;Course_BS"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#Course_Electronique -->
+
+    <owl:Class rdf:about="&smartschool;Course_Electronique">
+        <rdfs:subClassOf rdf:resource="&smartschool;Course_ME"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#Course_GC -->
+
+    <owl:Class rdf:about="&smartschool;Course_GC">
+        <rdfs:subClassOf rdf:resource="&smartschool;Course"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#Course_IT -->
+
+    <owl:Class rdf:about="&smartschool;Course_IT">
+        <rdfs:subClassOf rdf:resource="&smartschool;Course"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#Course_ME -->
+
+    <owl:Class rdf:about="&smartschool;Course_ME">
+        <rdfs:subClassOf rdf:resource="&smartschool;Course"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#Course_Management -->
+
+    <owl:Class rdf:about="&smartschool;Course_Management">
+        <rdfs:subClassOf rdf:resource="&smartschool;Course_BS"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#Course_RDM -->
+
+    <owl:Class rdf:about="&smartschool;Course_RDM">
+        <rdfs:subClassOf rdf:resource="&smartschool;Course_GC"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#Course_WEB -->
+
+    <owl:Class rdf:about="&smartschool;Course_WEB">
+        <rdfs:subClassOf rdf:resource="&smartschool;Course_IT"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#Department -->
+
+    <owl:Class rdf:about="&smartschool;Department"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#Engineering -->
+
+    <owl:Class rdf:about="&smartschool;Engineering">
+        <rdfs:subClassOf rdf:resource="&smartschool;School"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#Engineering_Student -->
+
+    <owl:Class rdf:about="&smartschool;Engineering_Student">
+        <rdfs:subClassOf rdf:resource="&smartschool;Student"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#GC -->
+
+    <owl:Class rdf:about="&smartschool;GC">
+        <rdfs:subClassOf rdf:resource="&smartschool;Department"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#GC_Teacher -->
+
+    <owl:Class rdf:about="&smartschool;GC_Teacher">
+        <rdfs:subClassOf rdf:resource="&smartschool;Teacher"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#IT -->
+
+    <owl:Class rdf:about="&smartschool;IT">
+        <rdfs:subClassOf rdf:resource="&smartschool;Department"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#IT_Teacher -->
+
+    <owl:Class rdf:about="&smartschool;IT_Teacher">
+        <rdfs:subClassOf rdf:resource="&smartschool;Teacher"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#ME -->
+
+    <owl:Class rdf:about="&smartschool;ME">
+        <rdfs:subClassOf rdf:resource="&smartschool;Department"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#ME_Teacher -->
+
+    <owl:Class rdf:about="&smartschool;ME_Teacher">
+        <rdfs:subClassOf rdf:resource="&smartschool;Teacher"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#Person -->
+
+    <owl:Class rdf:about="&smartschool;Person"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#School -->
+
+    <owl:Class rdf:about="&smartschool;School"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#Student -->
+
+    <owl:Class rdf:about="&smartschool;Student">
+        <rdfs:subClassOf rdf:resource="&smartschool;Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#Teacher -->
+
+    <owl:Class rdf:about="&smartschool;Teacher">
+        <rdfs:subClassOf rdf:resource="&smartschool;Person"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#bloc1 -->
+
+    <owl:NamedIndividual rdf:about="&smartschool;bloc1">
+        <rdf:type rdf:resource="&smartschool;Bloc"/>
+        <smartschool:ID rdf:datatype="&xsd;int">1</smartschool:ID>
+        <smartschool:name rdf:datatype="&xsd;string">ABC</smartschool:name>
+        <smartschool:status rdf:datatype="&xsd;boolean">true</smartschool:status>
+        <smartschool:belongs_to_departement rdf:resource="&smartschool;departement1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#bloc2 -->
+
+    <owl:NamedIndividual rdf:about="&smartschool;bloc2">
+        <rdf:type rdf:resource="&smartschool;Bloc"/>
+        <smartschool:ID rdf:datatype="&xsd;int">2</smartschool:ID>
+        <smartschool:name rdf:datatype="&xsd;string">FEG</smartschool:name>
+        <smartschool:status rdf:datatype="&xsd;boolean">false</smartschool:status>
+        <smartschool:belongs_to_departement rdf:resource="&smartschool;departement2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#bloc3 -->
+
+    <owl:NamedIndividual rdf:about="&smartschool;bloc3">
+        <rdf:type rdf:resource="&smartschool;Bloc"/>
+        <smartschool:ID rdf:datatype="&xsd;int">3</smartschool:ID>
+        <smartschool:name rdf:datatype="&xsd;string">IJK</smartschool:name>
+        <smartschool:status rdf:datatype="&xsd;boolean">false</smartschool:status>
+        <smartschool:belongs_to_departement rdf:resource="&smartschool;departement3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#bloc4 -->
+
+    <owl:NamedIndividual rdf:about="&smartschool;bloc4">
+        <smartschool:ID>4</smartschool:ID>
+        <smartschool:status>false</smartschool:status>
+        <smartschool:name>bloc G</smartschool:name>
+        <smartschool:belongs_to_departement rdf:resource="&smartschool;departement2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#course1 -->
+
+    <owl:NamedIndividual rdf:about="&smartschool;course1">
+        <smartschool:Nomber_of_chapter rdf:datatype="&xsd;int">02</smartschool:Nomber_of_chapter>
+        <smartschool:ID rdf:datatype="&xsd;int">1</smartschool:ID>
+        <smartschool:end_date rdf:datatype="&xsd;dateTime">2022-01-10</smartschool:end_date>
+        <smartschool:start_date rdf:datatype="&xsd;dateTime">2022-09-05</smartschool:start_date>
+        <smartschool:name>course11</smartschool:name>
+        <smartschool:attend_course rdf:resource="&smartschool;student1"/>
+        <smartschool:teached_by rdf:resource="&smartschool;teacher1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#course2 -->
+
+    <owl:NamedIndividual rdf:about="&smartschool;course2">
+        <smartschool:Nomber_of_chapter rdf:datatype="&xsd;int">15</smartschool:Nomber_of_chapter>
+        <smartschool:ID rdf:datatype="&xsd;int">2</smartschool:ID>
+        <smartschool:end_date rdf:datatype="&xsd;dateTime">2020-01-10</smartschool:end_date>
+        <smartschool:start_date rdf:datatype="&xsd;dateTime">2020-06-05</smartschool:start_date>
+        <smartschool:name>course22</smartschool:name>
+        <smartschool:attend_course rdf:resource="&smartschool;student2"/>
+        <smartschool:teached_by rdf:resource="&smartschool;teacher2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#course3 -->
+
+    <owl:NamedIndividual rdf:about="&smartschool;course3">
+        <smartschool:Nomber_of_chapter rdf:datatype="&xsd;int">19</smartschool:Nomber_of_chapter>
+        <smartschool:end_date rdf:datatype="&xsd;dateTime">2022-01-22</smartschool:end_date>
+        <smartschool:start_date rdf:datatype="&xsd;dateTime">2022-12-05</smartschool:start_date>
+        <smartschool:ID rdf:datatype="&xsd;int">3</smartschool:ID>
+        <smartschool:name>courseName</smartschool:name>
+        <smartschool:attend_course rdf:resource="&smartschool;student3"/>
+        <smartschool:teached_by rdf:resource="&smartschool;teacher3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#departement1 -->
+
+    <owl:NamedIndividual rdf:about="&smartschool;departement1">
+        <rdf:type rdf:resource="&smartschool;Department"/>
+        <smartschool:ID rdf:datatype="&xsd;int">1</smartschool:ID>
+        <smartschool:name rdf:datatype="&xsd;string">Informatique</smartschool:name>
+        <smartschool:status rdf:datatype="&xsd;boolean">true</smartschool:status>
+        <smartschool:has_bloc rdf:resource="&smartschool;bloc1"/>
+        <smartschool:has_school rdf:resource="&smartschool;school1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#departement2 -->
+
+    <owl:NamedIndividual rdf:about="&smartschool;departement2">
+        <rdf:type rdf:resource="&smartschool;Department"/>
+        <smartschool:ID rdf:datatype="&xsd;int">2</smartschool:ID>
+        <smartschool:name rdf:datatype="&xsd;string">Genie civil</smartschool:name>
+        <smartschool:status rdf:datatype="&xsd;boolean">false</smartschool:status>
+        <smartschool:has_bloc rdf:resource="&smartschool;bloc2"/>
+        <smartschool:has_school rdf:resource="&smartschool;school2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#departement3 -->
+
+    <owl:NamedIndividual rdf:about="&smartschool;departement3">
+        <rdf:type rdf:resource="&smartschool;Department"/>
+        <smartschool:ID rdf:datatype="&xsd;int">3</smartschool:ID>
+        <smartschool:name rdf:datatype="&xsd;string">Business</smartschool:name>
+        <smartschool:status rdf:datatype="&xsd;boolean">true</smartschool:status>
+        <smartschool:has_bloc rdf:resource="&smartschool;bloc3"/>
+        <smartschool:has_school rdf:resource="&smartschool;school2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#school1 -->
+
+    <owl:NamedIndividual rdf:about="&smartschool;school1">
+        <rdf:type rdf:resource="&smartschool;School"/>
+        <smartschool:ID rdf:datatype="&xsd;int">1</smartschool:ID>
+        <smartschool:name rdf:datatype="&xsd;string">Esprit</smartschool:name>
+        <smartschool:Adress rdf:datatype="&xsd;string">ariana soghra</smartschool:Adress>
+        <smartschool:Email rdf:datatype="&xsd;string">scolarité@esprit.tn</smartschool:Email>
+        <smartschool:has_department rdf:resource="&smartschool;departement1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#school2 -->
+
+    <owl:NamedIndividual rdf:about="&smartschool;school2">
+        <rdf:type rdf:resource="&smartschool;School"/>
+        <smartschool:ID rdf:datatype="&xsd;int">2</smartschool:ID>
+        <smartschool:name rdf:datatype="&xsd;string">Esprit2</smartschool:name>
+        <smartschool:Email rdf:datatype="&xsd;string">administration@esprit.tn</smartschool:Email>
+        <smartschool:Adress rdf:datatype="&xsd;string">sousse</smartschool:Adress>
+        <smartschool:has_department rdf:resource="&smartschool;departement2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#school3 -->
+
+    <owl:NamedIndividual rdf:about="&smartschool;school3">
+        <rdf:type rdf:resource="&smartschool;School"/>
+        <smartschool:ID rdf:datatype="&xsd;int">3</smartschool:ID>
+        <smartschool:name rdf:datatype="&xsd;string">Esprit3</smartschool:name>
+        <smartschool:Adress rdf:datatype="&xsd;string">ariana soghra</smartschool:Adress>
+        <smartschool:Email rdf:datatype="&xsd;string">service@esprit.tn</smartschool:Email>
+        <smartschool:has_department rdf:resource="&smartschool;departement3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#school4 -->
+
+    <owl:NamedIndividual rdf:about="&smartschool;school4">
+        <rdf:type rdf:resource="&smartschool;School"/>
+        <smartschool:ID rdf:datatype="&xsd;int">4</smartschool:ID>
+        <smartschool:Adress rdf:datatype="&xsd;string">Charguia</smartschool:Adress>
+        <smartschool:name rdf:datatype="&xsd;string">Esprit4</smartschool:name>
+        <smartschool:Email rdf:datatype="&xsd;string">serviceéleve@esprit.tn</smartschool:Email>
+        <smartschool:has_department rdf:resource="&smartschool;departement3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#student1 -->
+
+    <owl:NamedIndividual rdf:about="&smartschool;student1">
+        <rdf:type rdf:resource="&smartschool;Student"/>
+        <smartschool:ID rdf:datatype="&xsd;int">1</smartschool:ID>
+        <smartschool:Age rdf:datatype="&xsd;int">20</smartschool:Age>
+        <smartschool:First_Name rdf:datatype="&xsd;string">Fathi</smartschool:First_Name>
+        <smartschool:Degree rdf:datatype="&xsd;string">advanced</smartschool:Degree>
+        <smartschool:Last_Name rdf:datatype="&xsd;string">benfradej</smartschool:Last_Name>
+        <smartschool:Email rdf:datatype="&xsd;string">fathi@gmail.com</smartschool:Email>
+        <smartschool:Adress>Ariana</smartschool:Adress>
+        <smartschool:is_student_of rdf:resource="&smartschool;teacher1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#student2 -->
+
+    <owl:NamedIndividual rdf:about="&smartschool;student2">
+        <rdf:type rdf:resource="&smartschool;Student"/>
+        <smartschool:ID rdf:datatype="&xsd;int">2</smartschool:ID>
+        <smartschool:Age rdf:datatype="&xsd;int">27</smartschool:Age>
+        <smartschool:Degree rdf:datatype="&xsd;string">advanced</smartschool:Degree>
+        <smartschool:Last_Name rdf:datatype="&xsd;string">double patte</smartschool:Last_Name>
+        <smartschool:First_Name rdf:datatype="&xsd;string">oussema</smartschool:First_Name>
+        <smartschool:Email rdf:datatype="&xsd;string">oussema@gmail.com</smartschool:Email>
+        <smartschool:Adress>Monastir</smartschool:Adress>
+        <smartschool:is_student_of rdf:resource="&smartschool;teacher1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#student3 -->
+
+    <owl:NamedIndividual rdf:about="&smartschool;student3">
+        <rdf:type rdf:resource="&smartschool;Student"/>
+        <smartschool:Age rdf:datatype="&xsd;int">23</smartschool:Age>
+        <smartschool:ID rdf:datatype="&xsd;int">4</smartschool:ID>
+        <smartschool:First_Name rdf:datatype="&xsd;string">Alaa</smartschool:First_Name>
+        <smartschool:Last_Name rdf:datatype="&xsd;string">Ben Fradj</smartschool:Last_Name>
+        <smartschool:Email rdf:datatype="&xsd;string">fathi@gmail.com</smartschool:Email>
+        <smartschool:Degree rdf:datatype="&xsd;string">too advanced</smartschool:Degree>
+        <smartschool:Adress>Kalaat Andalous</smartschool:Adress>
+        <smartschool:is_student_of rdf:resource="&smartschool;teacher1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#student4 -->
+
+    <owl:NamedIndividual rdf:about="&smartschool;student4">
+        <rdf:type rdf:resource="&smartschool;Student"/>
+        <smartschool:Age rdf:datatype="&xsd;int">43</smartschool:Age>
+        <smartschool:ID rdf:datatype="&xsd;int">5</smartschool:ID>
+        <smartschool:Last_Name rdf:datatype="&xsd;string">Chaieb</smartschool:Last_Name>
+        <smartschool:First_Name rdf:datatype="&xsd;string">Jasser</smartschool:First_Name>
+        <smartschool:Email rdf:datatype="&xsd;string">jasser@gmail.com</smartschool:Email>
+        <smartschool:Degree rdf:datatype="&xsd;string">noob</smartschool:Degree>
+        <smartschool:Adress>Monastir</smartschool:Adress>
+        <smartschool:is_student_of rdf:resource="&smartschool;teacher1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#student5 -->
+
+    <owl:NamedIndividual rdf:about="&smartschool;student5">
+        <rdf:type rdf:resource="&smartschool;Student"/>
+        <smartschool:Age rdf:datatype="&xsd;int">12</smartschool:Age>
+        <smartschool:ID rdf:datatype="&xsd;int">6</smartschool:ID>
+        <smartschool:Last_Name rdf:datatype="&xsd;string">Gasmi</smartschool:Last_Name>
+        <smartschool:Degree rdf:datatype="&xsd;string">beginner</smartschool:Degree>
+        <smartschool:First_Name rdf:datatype="&xsd;string">tayeb</smartschool:First_Name>
+        <smartschool:Email rdf:datatype="&xsd;string">tayeb@gmail.com</smartschool:Email>
+        <smartschool:Adress>Gabes</smartschool:Adress>
+        <smartschool:is_student_of rdf:resource="&smartschool;teacher1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#teacher1 -->
+
+    <owl:NamedIndividual rdf:about="&smartschool;teacher1">
+        <rdf:type rdf:resource="&smartschool;Teacher"/>
+        <smartschool:ID rdf:datatype="&xsd;int">1</smartschool:ID>
+        <smartschool:Last_Name rdf:datatype="&xsd;string">Gasmi</smartschool:Last_Name>
+        <smartschool:Degree rdf:datatype="&xsd;string">docteur</smartschool:Degree>
+        <smartschool:First_Name rdf:datatype="&xsd;string">mouldi</smartschool:First_Name>
+        <smartschool:Email rdf:datatype="&xsd;string">mouldi@hotmail.com</smartschool:Email>
+        <smartschool:is_teacher_of rdf:resource="&smartschool;student1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#teacher2 -->
+
+    <owl:NamedIndividual rdf:about="&smartschool;teacher2">
+        <rdf:type rdf:resource="&smartschool;Teacher"/>
+        <smartschool:ID rdf:datatype="&xsd;int">2</smartschool:ID>
+        <smartschool:Last_Name rdf:datatype="&xsd;string">ahmed</smartschool:Last_Name>
+        <smartschool:First_Name rdf:datatype="&xsd;string">ahmed</smartschool:First_Name>
+        <smartschool:Email rdf:datatype="&xsd;string">ahmed@hotmail.com</smartschool:Email>
+        <smartschool:Degree rdf:datatype="&xsd;string">docteur</smartschool:Degree>
+        <smartschool:is_teacher_of rdf:resource="&smartschool;student2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#teacher3 -->
+
+    <owl:NamedIndividual rdf:about="&smartschool;teacher3">
+        <rdf:type rdf:resource="&smartschool;Teacher"/>
+        <smartschool:ID rdf:datatype="&xsd;int">3</smartschool:ID>
+        <smartschool:Degree rdf:datatype="&xsd;string">docteur</smartschool:Degree>
+        <smartschool:First_Name rdf:datatype="&xsd;string">semah</smartschool:First_Name>
+        <smartschool:Last_Name rdf:datatype="&xsd;string">semah</smartschool:Last_Name>
+        <smartschool:Email rdf:datatype="&xsd;string">semah@hotmail.com</smartschool:Email>
+        <smartschool:is_teacher_of rdf:resource="&smartschool;student3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#teacher4 -->
+
+    <owl:NamedIndividual rdf:about="&smartschool;teacher4">
+        <rdf:type rdf:resource="&smartschool;Teacher"/>
+        <smartschool:ID rdf:datatype="&xsd;int">4</smartschool:ID>
+        <smartschool:Degree rdf:datatype="&xsd;string">docteur</smartschool:Degree>
+        <smartschool:First_Name rdf:datatype="&xsd;string">samar</smartschool:First_Name>
+        <smartschool:Last_Name rdf:datatype="&xsd;string">samar</smartschool:Last_Name>
+        <smartschool:Email rdf:datatype="&xsd;string">samar@hotmail.com</smartschool:Email>
+        <smartschool:is_teacher_of rdf:resource="&smartschool;student1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#teacher5 -->
+
+    <owl:NamedIndividual rdf:about="&smartschool;teacher5">
+        <rdf:type rdf:resource="&smartschool;Teacher"/>
+        <smartschool:ID rdf:datatype="&xsd;int">5</smartschool:ID>
+        <smartschool:Degree rdf:datatype="&xsd;string">docteur</smartschool:Degree>
+        <smartschool:First_Name rdf:datatype="&xsd;string">maha</smartschool:First_Name>
+        <smartschool:Last_Name rdf:datatype="&xsd;string">maha</smartschool:Last_Name>
+        <smartschool:Email rdf:datatype="&xsd;string">maha@hotmail.com</smartschool:Email>
+        <smartschool:is_teacher_of rdf:resource="&smartschool;student4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ousse/ontologies/2022/9/smartschool#teacher6 -->
+
+    <owl:NamedIndividual rdf:about="&smartschool;teacher6">
+        <rdf:type rdf:resource="&smartschool;Teacher"/>
+        <smartschool:ID rdf:datatype="&xsd;int">6</smartschool:ID>
+        <smartschool:First_Name rdf:datatype="&xsd;string">badiaa</smartschool:First_Name>
+        <smartschool:Email rdf:datatype="&xsd;string">badiaa@hotmail.com</smartschool:Email>
+        <smartschool:Last_Name rdf:datatype="&xsd;string">bouhdid</smartschool:Last_Name>
+        <smartschool:Degree rdf:datatype="&xsd;string">docteur</smartschool:Degree>
+        <smartschool:is_teacher_of rdf:resource="&smartschool;student5"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
